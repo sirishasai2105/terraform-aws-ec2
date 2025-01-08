@@ -1,9 +1,9 @@
 resource "aws_instance" "terraform" {
-    count = length(var.instances)
+    count = 3
     ami = "ami-09c813fb71547fc4f"
-    vpc_security_group_ids = ["sg-001753742e64eaea2"] 
+    vpc_security_group_ids = ["sg-02c411625d172771b"] 
     instance_type = "t2.micro"
     tags = {
-        Name = var.instances[count.index]
+        Name = "node-1"
     }
 }
